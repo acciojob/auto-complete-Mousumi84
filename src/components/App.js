@@ -16,6 +16,12 @@ const [searchFruits,setSearchFruits]=useState(" ");
     <h1>Search item</h1>
     <input type="search" value={searchFruits} onChange={(e)=>setSearchFruits(e.target.value)} />
     <ul>
+        {fruits.filter(index => index.indexOf(searchFruits) != -1)
+          .map(index => {
+               return <li key={index}>{index}</li>
+          })
+        }
+    </ul>
     
     </div>
   )
